@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "id": "401a7797-8634-4c3d-9017-4d226e435d76",
+      "description": "buy a banana",
+      "isComplete": false
+    },
+    {
+      "id": "359674ea-e7bf-4372-ad6a-5e8757359cb5",
+      "description": "watch le tour",
+      "isComplete": false
+    }
+  ]
+}

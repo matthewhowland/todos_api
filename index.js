@@ -46,7 +46,15 @@ response.send(result);
 });
 
 server.put('/todos/:id', function(request, response){
-
+  var updatedTodoInfo = {
+    description: request.body.description,
+    isComplete: request.body.isComplete,
+  };
+  var updatedTodo = db.get('todos')
+                    .find({id: request.params.id})
+                    .assign(updatedTodoInfo)
+                    .value();
+  response.send(updatedTodo);
 });
 
 server.delete('/todos/:id', function (request, response){
@@ -54,7 +62,7 @@ server.delete('/todos/:id', function (request, response){
               .remove({id: request.params.id})
               .value();
   response.send(todo);
-})
+});
 
 server.listen(port, function(){
   console.log('Now listening on port ...', port);

@@ -2,8 +2,8 @@
   "todos": [
     {
       "id": "359674ea-e7bf-4372-ad6a-5e8757359cb5",
-      "description": "watch le tour",
-      "isComplete": false
+      "description": "watch tour de france",
+      "isComplete": "true"
     }
   ]
 }

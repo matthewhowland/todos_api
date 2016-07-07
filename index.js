@@ -4,6 +4,9 @@ var lowdb = require('lowdb');
 var server = express();
 var uuid = require('uuid');
 
+var Todo = require('./models/todo.js');
+var testTodo = new Todo('some stuff');
+console.log(testTodo);
 
 var port = process.env.PORT || 8080;
 var db = lowdb('db.json');
@@ -26,7 +29,7 @@ server.get('/todos/:id', function(request, response){
   var todo = db.get('todos')
               .find({id: request.params.id})
               .value();
-  response.send(todo);
+response.send(todo);
 
 });
 

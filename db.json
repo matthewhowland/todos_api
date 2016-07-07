@@ -2,11 +2,22 @@
   "todos": [
     {
       "id": "ac6c7abf-4da7-4d46-8766-70355ea02eca",
-      "description": "watch tour de france."
+      "description": "watch tour de france.",
+      "isComplete": false
     },
     {
       "id": "0767f13c-3868-416e-b14e-bb90cb33fd8f",
       "description": "take out the trash",
+      "isComplete": false
+    },
+    {
+      "id": "323a63bd-7d85-444b-8be1-9e2bc6d0562c",
+      "description": "watch tour de france.",
+      "isComplete": false
+    },
+    {
+      "id": "ff50ff45-51ce-46fb-a846-106dc95d4a28",
+      "description": "watch tour de france again",
       "isComplete": false
     }
   ]

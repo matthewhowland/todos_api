@@ -49,14 +49,8 @@ response.send(result);
 });
 
 server.put('/todos/:id', function(request, response){
-  var todo = new Todo(request.body.description);
+  var todo = new Todo(request.body.description, request.params.id);
   todo.updateComplete(request.body.isComplete);
-
-  // var updatedTodoInfo = {
-  //   description: request.body.description,
-  //   isComplete: request.body.isComplete,
-  // };
-
   var updatedTodo = db.get('todos')
                     .find({id: request.params.id})
                     .assign(todo)

@@ -9,7 +9,12 @@ function Todo(description){
 }
 
 Todo.prototype.updateComplete = function(value){
+  if(value.toLowerCase() === 'value'){
   this.isComplete = value;
+} else {
+  this.isComplete = false;
+}
+
 };
 
 

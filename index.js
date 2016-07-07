@@ -5,8 +5,6 @@ var server = express();
 var uuid = require('uuid');
 
 var Todo = require('./models/todo.js');
-var testTodo = new Todo('some stuff');
-console.log(testTodo);
 
 var port = process.env.PORT || 8080;
 var db = lowdb('db.json');
@@ -34,11 +32,13 @@ response.send(todo);
 });
 
 server.post('/todos', function(request, response){
-  var todo = {
-    id: uuid.v4(),
-    description: request.body.description,
-    isComplete: false
-  };
+  var todo = new Todo(request.body.description);
+
+  //  BELOW IS THE OLD CODE WE USED BEFORE WE SIMPLIFIED TO THE CODE ABOVE
+  //  id: uuid.v4(),
+  //   description: request.body.description,
+  //   isComplete: false
+  // };
 
   var result = db.get('todos')
                   .push(todo)
@@ -49,13 +49,17 @@ response.send(result);
 });
 
 server.put('/todos/:id', function(request, response){
-  var updatedTodoInfo = {
-    description: request.body.description,
-    isComplete: request.body.isComplete,
-  };
+  var todo = new Todo(request.body.description);
+  todo.updateComplete(request.body.isComplete);
+
+  // var updatedTodoInfo = {
+  //   description: request.body.description,
+  //   isComplete: request.body.isComplete,
+  // };
+
   var updatedTodo = db.get('todos')
                     .find({id: request.params.id})
-                    .assign(updatedTodoInfo)
+                    .assign(todo)
                     .value();
   response.send(updatedTodo);
 });

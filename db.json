@@ -1,9 +1,13 @@
 {
   "todos": [
     {
-      "id": "359674ea-e7bf-4372-ad6a-5e8757359cb5",
-      "description": "watch tour de france",
-      "isComplete": "true"
+      "id": "ac6c7abf-4da7-4d46-8766-70355ea02eca",
+      "description": "watch tour de france."
+    },
+    {
+      "id": "0767f13c-3868-416e-b14e-bb90cb33fd8f",
+      "description": "take out the trash",
+      "isComplete": false
     }
   ]
 }
